@@ -7,3 +7,10 @@ Arpan Sarangi
 Aryan Sharma
 
 Danish Mohammad
+
+# Assignment 1 - Convex Hull
+Our Algorithms - 
+1. Graham's Algorithm
+2. Jarvis March / Gift-wrapping Algorithm
+3. Andrew's Algorithm
+
