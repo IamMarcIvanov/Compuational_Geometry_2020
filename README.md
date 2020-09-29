@@ -13,4 +13,7 @@ Our Algorithms -
 1. Graham's Algorithm
 2. Jarvis March / Gift-wrapping Algorithm
 3. Andrew's Algorithm
+4. Quickhull
+5. Preparata / Divide and Conquer Algorithm
+6. Chan's Algorithm
 
