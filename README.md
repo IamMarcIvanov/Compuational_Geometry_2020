@@ -12,7 +12,7 @@ Danish Mohammad
 Our Algorithms - 
 1. Graham's Algorithm
 2. Jarvis March / Gift-wrapping Algorithm
-3. Andrew's Algorithm
+3. Andrew's Algorithm :=
     Currently I have used a point class and a line class (though it is not currently necessary). I was unable to put the various classes in separate files. I have also                       yet to handle degenerate cases. Currently, only integer coordinate poits are accepted.
 4. Quickhull
 5. Preparata / Divide and Conquer Algorithm
