@@ -1,0 +1,9 @@
+.vscode
+trials/
+
+*.o
+*.exe
+
+*.h.gch
+
+*.txt
