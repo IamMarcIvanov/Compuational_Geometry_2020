@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef POINT_H
+#define POINT_H
+
 #include <vector>
 
 using namespace std;
@@ -9,6 +11,10 @@ class Point
 {
 	public:
   double x, y;       /**<coordinates of the point*/
+
+  /** Default constructor.
+  */
+  Point();
 
   /** Constructor which takes the coordinates as arguments.
   */	
@@ -48,3 +54,5 @@ class ConvexHull
   */
 	void output();   
 };
+
+#endif

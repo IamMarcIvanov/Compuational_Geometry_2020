@@ -19,10 +19,13 @@ bool right_turn(Point p, Point q, Point r)
 void AndrewAlgorithm(ConvexHull ch)
 {
 	ch.input();
-	if(ch.point_set.size()==0)	{
-		cout << "\nEmpty input. Exiting...";
-		return ;
-	}
+	if (ch.point_set.size() < 3) {
+    for (auto it: ch.point_set){
+      ch.convex_hull.push_back(it);
+    }
+    ch.output();
+    return ;
+  }
 	sort(ch.point_set.begin(), ch.point_set.end());
 	int n = ch.point_set.size();
 	

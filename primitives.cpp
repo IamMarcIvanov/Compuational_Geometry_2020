@@ -7,7 +7,11 @@
 
 using namespace std;
 
-// const int eps = 1e-9;
+const int eps = 1e-9;
+
+Point::Point(){
+  x = 0, y=0;
+}
 
 Point::Point(double x_coord, double y_coord)
 {
@@ -16,7 +20,7 @@ Point::Point(double x_coord, double y_coord)
 }
 
 bool Point::equals (Point p){
-  // ///If the points coincide, their distance is close to zero.
+  ///If the points coincide, their distance is close to zero.
   // double distance = p.dotProduct(x-p.x, y-p.y, x-p.x, y-p.y);
   // if(distance < eps)
   //   return true;
@@ -47,7 +51,7 @@ double Point::findAngle (Point A, Point origin, Point B){
   double lenAsquare = dotProduct(A.x-origin.x, A.y-origin.y, A.x-origin.x, A.y-origin.y);   
   double lenBsquare = dotProduct(B.x-origin.x, B.y-origin.y, B.x-origin.x, B.y-origin.y);   
   double dotProd = dotProduct(A.x-origin.x, A.y-origin.y, B.x-origin.x, B.y-origin.y);
-  return acos(dotProd/sqrt(lenAsquare*lenBsquare));
+  return (acos(dotProd/sqrt(lenAsquare*lenBsquare)));
 }
 
 void ConvexHull::input()

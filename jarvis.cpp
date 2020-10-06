@@ -1,9 +1,10 @@
 #include <cmath>
+#include <iostream>
 #include "jarvis.h"
 
 using namespace std;
 
-Point bottomleftPoint(vector <Point> point_set) {
+Point bottomleftPoint(vector <Point>& point_set) {
   Point p = point_set[0];
   for (auto it: point_set) {
     if (it.operator<(p)) {
@@ -14,7 +15,7 @@ Point bottomleftPoint(vector <Point> point_set) {
 }
 
 Point pointWithBiggestAngle (Point A, Point origin, ConvexHull ch) {
-  int mex=0;
+  double mex=0;
   Point p = A;
   for (auto it: ch.point_set){
     if(it.equals(A) or it.equals(origin)){
@@ -39,7 +40,7 @@ void jarvisMarch(ConvexHull ch) {
     return ;
   }
   Point startPoint = bottomleftPoint(ch.point_set);
-  Point dummy = Point(startPoint.x, startPoint.y-1);              /**<Dummy point just above the starting point*/
+  Point dummy = Point(startPoint.x, startPoint.y+1);              /**<Dummy point just above the starting point*/
   ///Second point on the hull would make maximum angle with respect to dummy point and starting point (in order).
   Point secondPoint = pointWithBiggestAngle(dummy, startPoint, ch);
   ch.convex_hull.push_back(startPoint);
