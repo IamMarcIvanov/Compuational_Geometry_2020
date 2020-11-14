@@ -3,7 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <cmath>
-#include "primitives.h"
+#include "primitives.hpp"
 
 using namespace std;
 
@@ -105,10 +105,11 @@ void ConvexHull::output()
   ofstream myfile ("output.txt");
   if (myfile.is_open())
   {
+  myfile << convex_hull.size() << endl;
     for( int i=0 ; i<convex_hull.size() ; i++)
     {
       Point p = convex_hull[i];
-      myfile << "(" << p.x << "," << p.y << ")\n";
+      myfile << p.x << " " << p.y << " " << endl;
     }
     myfile.close();
   }

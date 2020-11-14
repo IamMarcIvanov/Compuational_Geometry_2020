@@ -1,6 +1,6 @@
 #ifndef POINT_H
 #define POINT_H
-
+///Defines the point if it is not defined before.
 #include <vector>
 
 using namespace std;

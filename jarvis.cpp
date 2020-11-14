@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
-#include "jarvis.h"
+#include <iomanip>
+#include "jarvis.hpp"
 
 using namespace std;
 
@@ -32,6 +33,7 @@ Point pointWithBiggestAngle (Point A, Point origin, ConvexHull ch) {
 
 void jarvisMarch(ConvexHull ch) {
   ch.input();
+  clock_t tStart = clock();
   if (ch.point_set.size() < 3) {
     for (auto it: ch.point_set){
       ch.convex_hull.push_back(it);
@@ -56,5 +58,6 @@ void jarvisMarch(ConvexHull ch) {
     ch.convex_hull.push_back(nextPoint);
     i++;
   }
+  printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
   ch.output();
 }

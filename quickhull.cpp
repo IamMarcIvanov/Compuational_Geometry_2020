@@ -1,5 +1,7 @@
 #include <cmath>
-#include "quickhull.h"
+#include <iostream>
+#include <iomanip>
+#include "quickhull.hpp"
 
 using namespace std;
 
@@ -49,6 +51,7 @@ void findHull (vector <Point>& sk, Point P, Point Q, Node* list){
 
 void quickHull (ConvexHull ch){
   ch.input();
+  clock_t tStart = clock();       /**<Start time of the algo*/
   if (ch.point_set.size() < 3) {
     for (auto it: ch.point_set){
       ch.convex_hull.push_back(it);
@@ -65,14 +68,14 @@ void quickHull (ConvexHull ch){
       rightMost=it;
     }
   }
+  ///We store the points in a circular linked list. 
   Node *l = new Node(leftMost), *r= new Node(rightMost);
   Node* head;
   head=l;
   l->next=r;
   r->next=l;
 
-  vector <Point> s1, s2;
-  ///Does not handle points lying on the line as of now.
+  vector <Point> s1, s2; 
   for(auto it: ch.point_set){
     if(signedDistance(it, leftMost, rightMost) > 0){
       s1.push_back(it);
@@ -89,5 +92,7 @@ void quickHull (ConvexHull ch){
     traverse = traverse->next;
   }
   ch.convex_hull.push_back(traverse->p);
+  ///Print time taken.
+  printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);   
   ch.output();
 }

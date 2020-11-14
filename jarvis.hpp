@@ -1,4 +1,4 @@
-#include "primitives.h"
+#include "primitives.hpp"
 
 /** Finds the point at the bottom-left corner, which will serve as the starting point.
 */

@@ -4,13 +4,14 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include <algorithm>
-#include "andrew1.h"
+#include "andrew1.hpp"
 
 using namespace std;
 
 bool right_turn(Point p, Point q, Point r)
 {
 	double det = p.x * (q.y - r.y) - q.x * (p.y - r.y) + r.x * (p.y - q.y);
+	///Left turn
 	if( det > 0 )
 		return false;
 	return true;
@@ -28,7 +29,7 @@ void AndrewAlgorithm(ConvexHull ch)
   }
 	sort(ch.point_set.begin(), ch.point_set.end());
 	int n = ch.point_set.size();
-	
+	///Creating upper hull
 	vector<Point> upper;
 	upper.push_back(ch.point_set[0]);
 	upper.push_back(ch.point_set[1]);
