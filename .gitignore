@@ -1,0 +1,11 @@
+*.o
+*.exe
+
+*.h.gch
+
+*.txt
+*.zip 
+*.html
+
+html/
+Doxyfile
