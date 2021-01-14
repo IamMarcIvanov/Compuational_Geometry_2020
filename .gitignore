@@ -1,0 +1,14 @@
+.vscode
+trials/
+plot/
+html/
+Doxyfile
+
+*.o
+*.exe
+
+*.h.gch
+
+*.txt
+*.zip 
+*.html
